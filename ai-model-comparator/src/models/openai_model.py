@@ -11,12 +11,12 @@ class OpenAIModel(BaseModel):
         self._client = AsyncOpenAI(api_key=api_key)
 
     async def generate(self, prompt: str) -> ModelResponse:
-        stat = time.monotonic()
+        start = time.monotonic()
         response = await self._client.chat.completions.create(
             model=MODEL_ID,
             messages=[{"role": "user", "content": prompt}],
         )
-        latancy = (time.monotonic() - stat) * 1000
+        latency = (time.monotonic() - start) * 1000
 
         choice = response.choices[0]
         usage = response.usage
@@ -25,7 +25,7 @@ class OpenAIModel(BaseModel):
             text=choice.message.content or "",
             input_tokens=usage.prompt_tokens,
             output_tokens=usage.completion_tokens,
-            latancy_ms=latancy,
+            latency_ms=latency,
             model_id=MODEL_ID
         )
         

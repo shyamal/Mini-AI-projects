@@ -1,4 +1,3 @@
-from models.openai_model import MODEL_ID
 import time
 import anthropic
 from .base import BaseModel, ModelResponse
@@ -24,4 +23,4 @@ class AnthropicModel(BaseModel):
             output_tokens=response.usage.output_tokens,
             latency_ms=latency,
             model_id=MODEL_ID
-        
+        )
