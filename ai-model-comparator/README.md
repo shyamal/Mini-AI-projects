@@ -20,7 +20,19 @@ A Python tool that compares responses from multiple AI models side-by-side, meas
 
 ## Setup
 
-_Documentation in progress — see `docs/` for specs._
+```bash
+# 1. Clone and activate venv
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+
+# 2. Configure secrets
+cp .env.example .env  # then fill in your API keys
+
+# 3. Install Ollama and pull llama3 (local open-source model)
+brew install ollama   # or https://ollama.com
+ollama pull llama3
+ollama serve          # runs on http://localhost:11434
+```
 
 ## License
 
