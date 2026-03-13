@@ -1,0 +1,37 @@
+{
+  "run_id": "39e09d1e",
+  "timestamp": "2026-03-13T04:10:48Z",
+  "prompt": "What is the chemical formula for water and what atoms does it contain?",
+  "reference_answer": "Water has the chemical formula H\u2082O. It contains two hydrogen atoms and one oxygen atom.",
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The chemical formula for water is H\u2082O. This formula indicates that each molecule of water is composed of two hydrogen (H) atoms and one oxygen (O) atom.",
+      "input_tokens": 21,
+      "output_tokens": 35,
+      "latency_ms": 2017.8282920023776,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRbFyT4wtnWZsSPwfA7'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "The chemical formula for water is H2O.\n\nWater contains two elements: hydrogen (H) and oxygen (O). The molecular structure of water is as follows:\n\n* 2 hydrogen atoms (H)\n* 1 oxygen atom (O)\n\nSo, water is composed of two hydrogen atoms bonded to a single oxygen atom.",
+      "input_tokens": 14,
+      "output_tokens": 65,
+      "latency_ms": 16489.509375001944,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

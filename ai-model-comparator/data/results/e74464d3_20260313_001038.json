@@ -1,0 +1,37 @@
+{
+  "run_id": "e74464d3",
+  "timestamp": "2026-03-13T00:10:38Z",
+  "prompt": "Name the planets in our solar system.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The planets in our solar system, in order from the Sun, are:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nAdditionally, there are dwarf planets, such as Pluto, Eris, Haumea, and Makemake, which are also part of our solar system.",
+      "input_tokens": 15,
+      "output_tokens": 79,
+      "latency_ms": 2292.1184999995603,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYz7HNochJVhPtJUdbRfR'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here are the 8 planets in our solar system, in order from the Sun:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nNote: Pluto was previously considered a planet, but in 2006 it was reclassified as a dwarf planet by the International Astronomical Union (IAU).",
+      "input_tokens": 8,
+      "output_tokens": 83,
+      "latency_ms": 12157.463957999425,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

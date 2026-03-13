@@ -1,0 +1,37 @@
+{
+  "run_id": "98f738cc",
+  "timestamp": "2026-03-13T04:14:57Z",
+  "prompt": "Write a SQL query that returns the top 5 customers by total order value from tables `orders(id, customer_id, amount)` and `customers(id, name)`.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "To return the top 5 customers by total order value from the given `orders` and `customers` tables, you can use the following SQL query:\n\n```sql\nSELECT c.id, c.name, SUM(o.amount) AS total_order_value\nFROM customers AS c\nJOIN orders AS o ON c.id = o.customer_id\nGROUP BY c.id, c.name\nORDER BY total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation:\n- **SELECT c.id, c.name, SUM(o.amount)**: This part selects the customer ID and name from the `customers` table, along with the total order value calculated using `SUM(o.amount)` from the `orders` table.\n- **FROM customers AS c**: This specifies that we're pulling data from the `customers` table, giving it an alias `c`.\n- **JOIN orders AS o ON c.id = o.customer_id**: This joins the `orders` table (with alias `o`) on the condition that the `customer_id` from the `orders` table matches the `id` from the `customers` table.\n- **GROUP BY c.id, c.name**: This groups the results by customer ID and name so that `SUM(o.amount)` calculates the total order value per customer.\n- **ORDER BY total_order_value DESC**: This orders the results in descending order based on the total order value, so the highest totals come first.\n- **LIMIT 5**: This limits the results to the top 5 customers with the highest total order value. \n\nMake sure to adjust the query as needed based on your actual database schema or SQL dialect, if necessary.",
+      "input_tokens": 41,
+      "output_tokens": 335,
+      "latency_ms": 7065.808999999717,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRrsYGUj3GfAAdnDhCX'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here is the SQL query that returns the top 5 customers by total order value:\n```\nSELECT c.name, SUM(o.amount) AS total_order_value\nFROM orders o\nJOIN customers c ON o.customer_id = c.id\nGROUP BY c.name\nORDER BY total_order_value DESC\nLIMIT 5;\n```\nHere's a breakdown of the query:\n\n1. We start by selecting the `name` column from the `customers` table (`c`) and the `total_order_value` column, which we'll calculate later.\n2. We join the `orders` table (`o`) with the `customers` table (`c`) on the `customer_id` column.\n3. We group the results by the `name` column.\n4. We calculate the `total_order_value` for each customer by summing the `amount` column from the `orders` table.\n5. We order the results by the `total_order_value` column in descending order (i.e., highest value first).\n6. Finally, we limit the results to the top 5 customers using the `LIMIT 5` clause.\n\nNote that the exact syntax may vary depending on the specific database management system you're using (e.g., MySQL, PostgreSQL, SQL Server, etc.).",
+      "input_tokens": 34,
+      "output_tokens": 256,
+      "latency_ms": 53216.374916999484,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

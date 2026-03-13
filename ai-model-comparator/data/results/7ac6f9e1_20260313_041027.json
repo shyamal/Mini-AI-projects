@@ -1,0 +1,37 @@
+{
+  "run_id": "7ac6f9e1",
+  "timestamp": "2026-03-13T04:10:27Z",
+  "prompt": "Name the eight planets of the solar system in order from the Sun.",
+  "reference_answer": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The eight planets of the solar system in order from the Sun are:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune",
+      "input_tokens": 21,
+      "output_tokens": 46,
+      "latency_ms": 2504.7502089983027,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRZMo8qs3tNgoTutXtH'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "There are seven planets in our solar system, not eight. Here are the seven planets in order from the Sun:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n\nNote: Pluto was previously considered the ninth planet, but in 2006 it was reclassified as a dwarf planet by the International Astronomical Union (IAU).",
+      "input_tokens": 14,
+      "output_tokens": 86,
+      "latency_ms": 20679.416874998424,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

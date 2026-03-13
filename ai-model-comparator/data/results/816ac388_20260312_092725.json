@@ -1,0 +1,37 @@
+{
+  "run_id": "816ac388",
+  "timestamp": "2026-03-12T09:27:25Z",
+  "prompt": "Hello",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "Hello! How can I assist you today?",
+      "input_tokens": 8,
+      "output_tokens": 9,
+      "latency_ms": 1824.9134579964448,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYxwvvt2tEwmmfGmxtaiC'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Hello! It's nice to meet you. Is there something I can help you with, or would you like to chat?",
+      "input_tokens": 1,
+      "output_tokens": 25,
+      "latency_ms": 13278.184666007292,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

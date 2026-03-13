@@ -1,0 +1,37 @@
+{
+  "run_id": "3a734c87",
+  "timestamp": "2026-03-13T04:18:01Z",
+  "prompt": "Suggest three creative names for a coffee shop that also sells books, with a one-sentence description for each.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "1. **Brewed Awakening**  \n   A cozy haven where the aroma of freshly ground coffee mingles with the scent of well-loved pages, inviting patrons to sip, read, and relax.\n\n2. **The Literary Latte**  \n   This tranquil retreat blends rich, artisanal coffee with a thoughtfully curated selection of books, perfect for fueling both the mind and the senses.\n\n3. **Caf\u00e9 Bibliophile**  \n   A chic fusion of caffeine and literature, where every cup is brewed to inspire stories and every shelf is filled with tales waiting to be discovered.",
+      "input_tokens": 29,
+      "output_tokens": 115,
+      "latency_ms": 3589.0335830008553,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzS7vgwyetmqdEKs8hGS'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here are three creative name suggestions for a coffee shop that also sells books, along with a one-sentence description for each:\n\n1. **Page & Cup**: A cozy haven where the scent of freshly brewed coffee and the musty smell of old books mingle, inviting customers to linger and get lost in a good story.\n2. **Fable & Grind**: A whimsical coffee shop that whisks customers away to a world of wonder, where the pages of beloved books meet the rich flavors of expertly crafted coffee drinks.\n3. **Chapter One**: A warm and welcoming space where book lovers can find their next great adventure, whether it's a new release or a classic tale, paired perfectly with a perfectly brewed cup of coffee.\n\nI hope you like these suggestions!",
+      "input_tokens": 23,
+      "output_tokens": 155,
+      "latency_ms": 32961.93425000092,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

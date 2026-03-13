@@ -1,0 +1,37 @@
+{
+  "run_id": "767aee07",
+  "timestamp": "2026-03-13T04:10:06Z",
+  "prompt": "What is the speed of light in a vacuum, and what are its units?",
+  "reference_answer": "The speed of light in a vacuum is approximately 299,792,458 metres per second (m/s), often approximated as 3\u00d710\u2078 m/s.",
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The speed of light in a vacuum is approximately \\(299,792,458\\) meters per second (m/s). It is commonly rounded to \\(3.00 \\times 10^8\\) m/s for ease of use in calculations. The units of the speed of light are meters per second (m/s).",
+      "input_tokens": 23,
+      "output_tokens": 65,
+      "latency_ms": 2838.57070799786,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRXSdYGmFCew5HUkWMc'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "The speed of light in a vacuum is approximately:\n\nc = 299,792,458 meters per second (m/s)\n\nIn scientific notation, this is often written as:\n\nc = 2.99792458 \u00d7 10^8 meters per second (m/s)\n\nThe units are meters per second (m/s), which is a measure of distance (in meters) divided by time (in seconds).",
+      "input_tokens": 16,
+      "output_tokens": 82,
+      "latency_ms": 25820.7403339984,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

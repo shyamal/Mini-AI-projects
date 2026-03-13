@@ -1,0 +1,37 @@
+{
+  "run_id": "323528d3",
+  "timestamp": "2026-03-13T04:11:33Z",
+  "prompt": "Summarise the plot of Romeo and Juliet in three sentences.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "\"Romeo and Juliet\" tells the story of two young lovers from feuding families in Verona, the Montagues and the Capulets. Despite the enmity between their families, Romeo and Juliet fall deeply in love and secretly marry, but a series of misunderstandings and tragic events leads to both of their untimely deaths. Their tragic end ultimately reconciles their families, highlighting the consequences of hate and the power of love.",
+      "input_tokens": 20,
+      "output_tokens": 88,
+      "latency_ms": 2522.0683330007887,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRdzZ5egnJH3a7uwkzm'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here is a summary of the plot of Romeo and Juliet:\n\nRomeo, a young Montague, falls in love with Juliet, the daughter of the rival Capulet family, at a ball hosted by her parents. The two secretly marry, but their happiness is short-lived as Romeo kills Juliet's cousin Tybalt in a duel, leading to his banishment from Verona. In the end, Juliet fakes her own death to avoid marrying another man, but Romeo believes she is really dead and poisons himself in her tomb, leading to Juliet's realization of the truth and her own tragic demise.",
+      "input_tokens": 13,
+      "output_tokens": 122,
+      "latency_ms": 24540.71241699785,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

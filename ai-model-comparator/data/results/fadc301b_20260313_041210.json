@@ -1,0 +1,37 @@
+{
+  "run_id": "fadc301b",
+  "timestamp": "2026-03-13T04:12:10Z",
+  "prompt": "In one paragraph, explain what the Internet is and how it works at a high level.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The Internet is a vast network of interconnected computers and devices that communicate with each other using standardized protocols, primarily the Transmission Control Protocol (TCP) and the Internet Protocol (IP). At a high level, data is transmitted over the Internet in packets, which travel through various pathways involving routers and servers, connecting users globally. When a user accesses a website, their device sends a request to the relevant server, which processes the request and sends back the appropriate data, such as web pages, images, or videos. This interconnected infrastructure enables diverse services, from browsing and email to online gaming and streaming, all supported by a decentralized architecture that allows for reliability and scalability.",
+      "input_tokens": 25,
+      "output_tokens": 131,
+      "latency_ms": 3963.16916700016,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRfpNDZLjuYnZ3Ff3mD'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "The Internet is a global network of interconnected computers and servers that communicate with each other using standardized protocols. At its core, the Internet is a vast network of nodes, or \"hosts,\" that can be thought of as digital \"post offices\" where data is stored and transmitted. When you send data over the Internet, such as an email or a request to access a website, your device (like a computer or smartphone) breaks the data into small packets and assigns each packet a unique address. These packets are then routed through the Internet's network of nodes, which use special software and protocols to direct the packets to their intended destination. This process is known as \"routing\" and is managed by a system of specialized servers and networks, allowing data to flow seamlessly across the globe and enabling the rapid exchange of information, communication, and data sharing that we know as the Internet.",
+      "input_tokens": 18,
+      "output_tokens": 174,
+      "latency_ms": 36507.207624999864,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

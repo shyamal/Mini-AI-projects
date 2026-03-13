@@ -1,0 +1,37 @@
+{
+  "run_id": "5130ad72",
+  "timestamp": "2026-03-13T04:11:08Z",
+  "prompt": "Summarise the concept of machine learning in two sentences.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "Machine learning is a subset of artificial intelligence that enables computers to learn from and make predictions or decisions based on data without explicit programming. It involves the development of algorithms that can identify patterns and improve their performance over time as they are exposed to more data.",
+      "input_tokens": 19,
+      "output_tokens": 50,
+      "latency_ms": 2306.1435829986294,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRcW3KCLZjdW1fodvuH'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here is a summary of machine learning in two sentences:\n\nMachine learning is a subfield of artificial intelligence that involves training algorithms on data to enable them to make predictions, classify new data, or make decisions without being explicitly programmed. Through a process of training on labeled data, machine learning algorithms can learn patterns, relationships, and rules that allow them to improve their performance on a task over time, often leading to impressive accuracy and decision-making capabilities.",
+      "input_tokens": 12,
+      "output_tokens": 88,
+      "latency_ms": 19988.39158299961,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

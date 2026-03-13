@@ -1,0 +1,66 @@
+[
+  {
+    "category": "factual",
+    "prompt": "What is the speed of light in a vacuum, and what are its units?",
+    "reference": "The speed of light in a vacuum is approximately 299,792,458 metres per second (m/s), often approximated as 3×10⁸ m/s."
+  },
+  {
+    "category": "factual",
+    "prompt": "Name the eight planets of the solar system in order from the Sun.",
+    "reference": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune."
+  },
+  {
+    "category": "factual",
+    "prompt": "What year did the Berlin Wall fall?",
+    "reference": "The Berlin Wall fell in 1989."
+  },
+  {
+    "category": "factual",
+    "prompt": "What is the chemical formula for water and what atoms does it contain?",
+    "reference": "Water has the chemical formula H₂O. It contains two hydrogen atoms and one oxygen atom."
+  },
+  {
+    "category": "summarization",
+    "prompt": "Summarise the concept of machine learning in two sentences."
+  },
+  {
+    "category": "summarization",
+    "prompt": "Summarise the plot of Romeo and Juliet in three sentences."
+  },
+  {
+    "category": "summarization",
+    "prompt": "In one paragraph, explain what the Internet is and how it works at a high level."
+  },
+  {
+    "category": "code",
+    "prompt": "Write a Python function called `fibonacci` that returns the first n Fibonacci numbers as a list."
+  },
+  {
+    "category": "code",
+    "prompt": "Write a Python function `is_palindrome(s: str) -> bool` that returns True if the string is a palindrome, ignoring case and spaces."
+  },
+  {
+    "category": "code",
+    "prompt": "Write a SQL query that returns the top 5 customers by total order value from tables `orders(id, customer_id, amount)` and `customers(id, name)`."
+  },
+  {
+    "category": "reasoning",
+    "prompt": "If a train travels at 120 km/h and needs to cover 450 km, how long will the journey take? Show your working."
+  },
+  {
+    "category": "reasoning",
+    "prompt": "Explain the trolley problem and the two main ethical positions it illustrates."
+  },
+  {
+    "category": "creative",
+    "prompt": "Write a four-line poem about artificial intelligence."
+  },
+  {
+    "category": "creative",
+    "prompt": "Write a one-paragraph short story about a robot who discovers music for the first time."
+  },
+  {
+    "category": "creative",
+    "prompt": "Suggest three creative names for a coffee shop that also sells books, with a one-sentence description for each."
+  }
+]

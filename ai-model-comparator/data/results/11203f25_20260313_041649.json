@@ -1,0 +1,37 @@
+{
+  "run_id": "11203f25",
+  "timestamp": "2026-03-13T04:16:49Z",
+  "prompt": "Write a four-line poem about artificial intelligence.",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "In circuits hums a silent thought,  \nA world redefined by what is sought.  \nFrom code and light, new dreams take flight,  \nIn shadows, wisdom blooms from night.",
+      "input_tokens": 16,
+      "output_tokens": 38,
+      "latency_ms": 3079.965416996856,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzS49Zji639TRNjRYWvG'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "Here is a four-line poem about artificial intelligence:\n\nMinds of metal, born of code,\nArtificial intelligence, a path to abode.\nLearning and growing, with each new day,\nIntelligent creations, leading the way.",
+      "input_tokens": 9,
+      "output_tokens": 46,
+      "latency_ms": 13583.644792000996,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

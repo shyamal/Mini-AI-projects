@@ -1,0 +1,37 @@
+{
+  "run_id": "0f7e0f3c",
+  "timestamp": "2026-03-13T04:10:31Z",
+  "prompt": "What year did the Berlin Wall fall?",
+  "reference_answer": "The Berlin Wall fell in 1989.",
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "The Berlin Wall fell on November 9, 1989.",
+      "input_tokens": 15,
+      "output_tokens": 13,
+      "latency_ms": 2149.610666998342,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYzRauyRDfCxRSUVk9cUi'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "The Berlin Wall fell on November 9, 1989.",
+      "input_tokens": 8,
+      "output_tokens": 13,
+      "latency_ms": 4455.750250002893,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}
