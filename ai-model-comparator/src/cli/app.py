@@ -37,23 +37,39 @@ def compare(
     _run(prompt, reference=reference)
 
 
+def _load_prompts(path: Path) -> list[dict]:
+    """Load prompts from a .json or .txt file.
+
+    JSON: list of strings or {prompt, reference?} objects.
+    TXT:  one prompt per non-empty line.
+    """
+    if path.suffix == ".txt":
+        entries = [{"prompt": line} for line in path.read_text().splitlines() if line.strip()]
+    else:
+        raw = json.loads(path.read_text())
+        entries = [{"prompt": e} if isinstance(e, str) else e for e in raw]
+    return entries
+
+
 @app.command()
 def benchmark(
     prompt_file: Path = typer.Option(
         PROMPTS_DIR / "benchmark_set.json",
         "--prompt-file",
         "-f",
-        help="JSON file with list of {prompt, reference?} objects.",
-        exists=True,
+        help="Prompt file to run (.json list or .txt one-per-line).",
     ),
 ) -> None:
-    """Run all prompts in a JSON file and save results to data/results/."""
-    prompts = json.loads(prompt_file.read_text())
-    console.print(f"[bold]Running {len(prompts)} prompts…[/bold]")
-    for i, entry in enumerate(prompts, 1):
-        prompt = entry if isinstance(entry, str) else entry["prompt"]
-        reference = None if isinstance(entry, str) else entry.get("reference")
-        console.rule(f"[{i}/{len(prompts)}] {prompt[:60]}")
+    """Run all prompts in a file and save each result to data/results/."""
+    if not prompt_file.exists():
+        console.print(f"[red]File not found:[/red] {prompt_file}")
+        raise typer.Exit(1)
+    entries = _load_prompts(prompt_file)
+    console.print(f"[bold]Running {len(entries)} prompts from {prompt_file.name}…[/bold]")
+    for i, entry in enumerate(entries, 1):
+        prompt = entry["prompt"]
+        reference = entry.get("reference")
+        console.rule(f"[{i}/{len(entries)}] {prompt[:60]}")
         _run(prompt, reference=reference, save_result=True)
 
 
