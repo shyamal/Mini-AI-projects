@@ -1,0 +1,37 @@
+{
+  "run_id": "9f189e57",
+  "timestamp": "2026-03-13T00:08:52Z",
+  "prompt": "What is 2+2?",
+  "reference_answer": null,
+  "responses": [
+    {
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "text": "2 + 2 equals 4.",
+      "input_tokens": 14,
+      "output_tokens": 8,
+      "latency_ms": 1408.4618329998193,
+      "error": null
+    },
+    {
+      "model_id": "anthropic",
+      "provider": "anthropic",
+      "text": "",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 0.0,
+      "error": "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CYz7A7779snNXiLyL1yJe'}"
+    },
+    {
+      "model_id": "llama3",
+      "provider": "ollama",
+      "text": "The answer to 2+2 is 4.",
+      "input_tokens": 7,
+      "output_tokens": 11,
+      "latency_ms": 4743.77558299966,
+      "error": null
+    }
+  ],
+  "metrics": [],
+  "rankings": {}
+}

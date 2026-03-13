@@ -5,15 +5,14 @@ from pathlib import Path
 from typing import Optional
 
 import typer
-from rich.console import Console
 
 from ..config import build_registry
 from ..metrics.summary import get_full_summary
 from ..runner.prompt_runner import run_comparison
 from ..runner.result_collector import collect, save
+from .display import console, print_results
 
 app = typer.Typer(help="AI Model Comparator — benchmark LLM responses across cost, speed, and quality.")
-console = Console()
 
 PROMPTS_DIR = Path(__file__).parents[2] / "data" / "prompts"
 
@@ -26,7 +25,7 @@ def _run(prompt: str, reference: str | None = None, save_result: bool = True) ->
         path = save(result)
         console.print(f"[dim]saved → {path}[/dim]")
     df = get_full_summary(result, reference=reference)
-    console.print(df.to_string())
+    print_results(result, df)
 
 
 @app.command()
