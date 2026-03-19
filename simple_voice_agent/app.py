@@ -13,47 +13,61 @@ async def main():
     # Initialize Deepgram client
     dg_client = DeepgramClient(DEEPGRAM_API_KEY)
     
-    # Connect to Deepgram streaming API
-    dg_connection = dg_client.listen.asyncc.to_url(
-        LiveOptions(
-            model="nova-2",
-            interim_results=True,
-            smart_format=True,
-        )
-    )
-    
-    # Handle transcription events
-    async def on_message(result, **kwargs):
-        sentence = result.channel.alternatives[0].transcript
-        if sentence:
-            print(f"User: {sentence}")
+    dg_connection = dg_client.listen.asyncwebsocket.v("1")
+
+    async def on_message(self, result, **kwargs):
+        try:
+            sentence = result.channel.alternatives[0].transcript
+            if sentence:
+                print(f"🗣️ You said: {sentence}")
+        except Exception as e:
+            # Deepgram occasionally sends other event types (like Metadata) that don't have transcripts
+            pass
     
     dg_connection.on(LiveTranscriptionEvents.Transcript, on_message)
-    
-    # Start microphone stream
+
+    options = LiveOptions(
+        model="nova-2",
+        language="en-US",
+        smart_format=True,
+        encoding="linear16",
+        channels=1,
+        sample_rate=44100,
+    )
+
+    await dg_connection.start(options)
+
     p = pyaudio.PyAudio()
+    
     stream = p.open(
         format=pyaudio.paInt16,
         channels=1,
-        rate=16000,
+        rate=44100,
         input=True,
         frames_per_buffer=1024,
     )
-    
-    # Stream audio to Deepgram
-    await dg_connection.start(dg_client.listen.asyncc.websocket_url)
-    
+
+    print("🎤 Listening... Press Ctrl+C to stop")
+
     try:
         while True:
-            data = stream.read(1024)
+            # Use to_thread to prevent stream.read from blocking the vital asyncio event loop
+            data = await asyncio.to_thread(stream.read, 1024, exception_on_overflow=False)
             await dg_connection.send(data)
-    except KeyboardInterrupt:
-        pass
+
+    except (KeyboardInterrupt, asyncio.CancelledError):
+        print("\n🛑 Stopping...")
+    
     finally:
-        await dg_connection.finish()
         stream.stop_stream()
         stream.close()
         p.terminate()
+        
+        try:
+            await dg_connection.finish()
+        except Exception:
+            pass
+        print("✅ Done")
 
 if __name__ == "__main__":
     asyncio.run(main())
