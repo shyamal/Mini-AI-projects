@@ -6,29 +6,18 @@ import pyaudio
 from deepgram import DeepgramClient, LiveTranscriptionEvents, LiveOptions
 
 from openai import AsyncOpenAI
-from elevenlabs.play import play
-from elevenlabs.client import ElevenLabs
+import pyttsx3
 
 load_dotenv()
 
 DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
 client = AsyncOpenAI()
-elevenlabs_client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
+engine = pyttsx3.init()
 
-def speak_sync(text):
-    try:
-        print("🔊 Calling ElevenLabs API...")
-        audio = elevenlabs_client.text_to_speech.convert(
-            text=text,
-            voice_id="21m00Tcm4TlvDq8ikWAM", # Voice ID for "Rachel"
-            model_id="eleven_multilingual_v2"
-        )
-        print("🎵 Playing audio...")
-        play(audio)
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        print(f"❌ ElevenLabs Error: {e}")
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
 
 # Initialize memory
 conversation_history = [
@@ -63,18 +52,14 @@ async def main():
     async def on_message(self, result, **kwargs):
         try:
             sentence = result.channel.alternatives[0].transcript
-            if sentence.strip():
+            if sentence:
                 print(f"🗣️ You said: {sentence}")
                 response = await askLLM(sentence)
                 print(f"🤖 Assistant: {response}")
-                await asyncio.to_thread(speak_sync, response)
-        except (AttributeError, KeyError, IndexError):
-            # Ignore empty/metadata packets gracefully without crashing
-            pass
+                speak(response)
         except Exception as e:
-            import traceback
-            traceback.print_exc()
-            print(f"❌ Error in message handler: {e}")
+            # Deepgram occasionally sends other event types (like Metadata) that don't have transcripts
+            pass
     
     dg_connection.on(LiveTranscriptionEvents.Transcript, on_message)
 
